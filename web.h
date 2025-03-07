@@ -130,31 +130,38 @@ const char index_smartphone[] PROGMEM = R"rawliteral(
         var DataJson = JSON.parse(DataVDK); 
            
         
-        if(DataJson.MaThe == "null")
-        {
-          document.getElementById("thongbao").innerHTML = "Vui Lòng Quét Thẻ";
-        }
-        else 
-        {
-          document.getElementById("thongbao").innerHTML = "Kiểm tra thẻ!!!";
-          document.getElementById("mathe").value = DataJson.MaThe;
-          
-          
-          if(DataJson.RL == "0")  
-          {
-            console.log("Kiểm tra thẻ MYSQL");
-            KiemTraThe();
-          }
-          else if(DataJson.RL == "1") 
-          {
-            DieuKhienRelay();
-          }
-          
-
-          
-          
-          
-        }
+        
+            if(DataJson.MaThe == "null")
+            {
+              document.getElementById("thongbao").innerHTML = "Vui Lòng Quét Thẻ";
+            }
+            else 
+            {
+              document.getElementById("thongbao").innerHTML = "Kiểm tra thẻ!!!";
+              document.getElementById("mathe").value = DataJson.MaThe;
+              
+              
+              if(DataJson.RL == "0")  
+              {
+                console.log("Kiểm tra thẻ MYSQL");
+                KiemTraThe();
+              }
+              else if(DataJson.RL == "1") 
+              {
+                DieuKhienRelay();
+              }
+                    
+            }
+        
+        
+        if(DataJson.RL == "1")  
+              {
+                document.getElementById("mathe").value = DataJson.MaThe1;
+              }
+              else
+              {
+                document.getElementById("mathe").value = "";
+              }
         
         
         if(DataJson.hoten != null)
@@ -397,6 +404,14 @@ const char index_smartphone[] PROGMEM = R"rawliteral(
             {
             console.log("Relay OFF!!!!");
             document.getElementById("RL").innerHTML = "ĐANG TẮT";
+            
+        
+            document.getElementById("hoten").value = "";
+            document.getElementById("sdt").value = "";
+            document.getElementById("biensoxe").value = "";
+            document.getElementById("dongdien").value = "";
+            document.getElementById("congsuat").value = "";
+            document.getElementById("sotien").value = "";
           
             }
         }
@@ -498,6 +513,7 @@ const char index_smartphone[] PROGMEM = R"rawliteral(
         if(DataJsonThemSuaXoa.MaThe == "null")
         {
           document.getElementById("thongbaothemsuaxoa").innerHTML = "Vui Lòng Quét Thẻ";
+          
         }
         else 
         {
@@ -520,7 +536,7 @@ const char index_smartphone[] PROGMEM = R"rawliteral(
   
   function KiemTraTheThemSuaXoa()
   {
-    clearTimeout(myVar2);
+    //clearTimeout(myVar2);
     console.log("run KiemTraTheThemSuaXoa");
     
     var data_the = document.getElementById("mathethemsuaxoa").value;
@@ -539,6 +555,16 @@ const char index_smartphone[] PROGMEM = R"rawliteral(
            
         var DataJsonKiemTraTheThemSuaXoa = JSON.parse(DataKiemTraTheThemSuaXoa); 
         
+        if(DataJsonKiemTraTheThemSuaXoa.Data == "null")
+        {
+        
+        document.getElementById("hotenthemsuaxoa").value = "";
+        document.getElementById("sdtthemsuaxoa").value = "";
+        document.getElementById("biensoxethemsuaxoa").value = "";
+        document.getElementById("dongdienthemsuaxoa").value = "";
+        document.getElementById("congsuatthemsuaxoa").value = "";
+        document.getElementById("sotienthemsuaxoa").value = "";
+        }
        
        if(DataJsonKiemTraTheThemSuaXoa.hoten != null)
         {
@@ -1060,7 +1086,6 @@ const char index_smartphone[] PROGMEM = R"rawliteral(
             <button class ="button" id= "btnthem" onclick = "BtnThem()">THÊM</button>
             <button class ="button" id= "btnsua" onclick = "BtnSua()">SỬA</button>
             <button class ="button" id= "btnxoa"  onclick = "BtnXoa()">XÓA</button>
-            <button class ="button" onclick = "BtnKiemTra()">KIỂM TRA</button>
             <button class ="button" onclick = "BtnReset()">RESET</button>
            </td> 
           </td>  
