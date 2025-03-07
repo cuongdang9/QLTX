@@ -1,0 +1,8 @@
+http://192.168.1.44:8080/DATAESP32RFIDACS712/kiemtramathehethong.php
+
+http://192.168.1.44:8080/DATAESP32RFIDACS712/xoathe.php
+
+
+http://192.168.1.44:8080/DATAESP32RFIDACS712/luuthongtin.php
+
+POST /DATAESP32RFIDACS712/kiemtramathehethong.php HTTP/1.1$0D$0AHost: 192.168.1.54:8080$0D$0AAccept: */*$0D$0AContent-Type: application/x-www-form-urlencoded$0D$0AContent-Length: 15$0D$0A$0D$0Amathe=123456789$0D$0A
