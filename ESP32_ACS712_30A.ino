@@ -5,7 +5,7 @@
 #include <WiFiClient.h>
 #include <ArduinoJson.h>
 #include <HTTPClient.h>
-const char* ssid = "pornhub";
+const char* ssid = "meomeomeooo";
 const char* password = "0327614010";
 AsyncWebServer serverSmartPhone(80);
 AsyncEventSource events("/events");
