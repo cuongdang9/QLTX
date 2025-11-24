@@ -1,7 +1,5 @@
 <?php
-
 		include 'connUpdate.php';
-		
 		$mathe = $_POST['mathe'];
 		//$password = $_POST['password'];
 		//$passwordupdate = $_POST['passwordupdate'];
@@ -25,50 +23,36 @@
 			  
 			  // cho True để updatepassword
 			  
-			  $foo = True;
-			    				  
-         }
-		 
-		 
+			  $foo = True;		    				  
+         }	 
 		 if($foo)
 		 {
 			// echo ("UPDATE password");
-			 
-			 // lấy dữ liệu id hàng dữ liệu so sánh đúng để update password mới
-			  		  
-			 $id = intval($response['id']);
-			  
+			 // lấy dữ liệu id hàng dữ liệu so sánh đúng để update password mới 		  
+			 $id = intval($response['id']); 
 			 //echo ('------------------------------');
-			 
 			  //echo ('id = ');
-				
-			// echo ($id);
-				  
-			  
-			  
+			// echo ($id);		  
 			  $queryResult = "UPDATE user SET pass = '$passwordupdate' WHERE id='$id' ";
 			  
 			  
 			  if ($connect->query($queryResult) == TRUE) 
 			  {
 				   // Update passwold thành công
-					echo "E";
-											
+					echo "E";							
 			} 
 			else 
 			{
 				    // Update passwold lỗi
 					echo "F";
 			}	
-			
 		 }
 		 else
 		 {
 			 // username password nhập sai
 			  echo "G";
 		 }
-		 
-		  
 		 $connect->close();
 	
+
 ?>
