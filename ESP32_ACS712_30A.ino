@@ -5,8 +5,8 @@
 #include <WiFiClient.h>
 #include <ArduinoJson.h>
 #include <HTTPClient.h>
-const char* ssid = "meomeomeooo";
-const char* password = "0327614010";
+//const char* ssid = "";
+//const char* password = "";
 AsyncWebServer serverSmartPhone(80);
 AsyncEventSource events("/events");
 #include "web.h"
@@ -1079,3 +1079,4 @@ void  JsonSendWebReset()
   http.end();
   Serial.println("==================================================================");
 }
+
